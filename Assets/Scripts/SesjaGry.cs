@@ -17,6 +17,8 @@ public class SesjaGry : MonoBehaviour {
         int numberGameSessions = FindObjectsOfType<SesjaGry>().Length;
         if (numberGameSessions > 1)
         {
+            // roziwazanie problemu z naliczaniem, lub nie punktow, poniewaz destroy (unity - manual - stany awake, init itd) jest na koncu framea, to istnieja dwa obiekty przez jego dlugosc
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
         else
